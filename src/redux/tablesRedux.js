@@ -1,7 +1,7 @@
 //selectors
 export const getAllTables = state => state.tables;
 export const getTableById = ({ tables }, tableId) => tables.find(table => table.id === tableId);
-
+export const API_URL = process.env.NODE_ENV === 'production' ?  '/api' : 'http://localhost:3131/api'
 // actions
 const createActionName = actionName => `app/tables/${actionName}`;
 const UPDATE_TABLES = createActionName('UPDATE_TABLES');
